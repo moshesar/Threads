@@ -11,8 +11,15 @@ public class MyTask {
 	}
 	
 	public void doTask(){ // using anonymous class
-		while(!stop)
-			x++;
+		new Thread(new Runnable() {
+		@Override
+		public void run() {
+			while(!stop){
+				x++;
+				}
+			}
+		}
+		).start();
 	}
 		
 	
